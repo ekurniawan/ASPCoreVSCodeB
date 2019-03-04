@@ -1,0 +1,14 @@
+c:\Kuliah\2019\ASPCoreGroupB\bin\Debug\netcoreapp2.2\ASPCoreGroupB.deps.json
+c:\Kuliah\2019\ASPCoreGroupB\bin\Debug\netcoreapp2.2\ASPCoreGroupB.runtimeconfig.json
+c:\Kuliah\2019\ASPCoreGroupB\bin\Debug\netcoreapp2.2\ASPCoreGroupB.runtimeconfig.dev.json
+c:\Kuliah\2019\ASPCoreGroupB\bin\Debug\netcoreapp2.2\ASPCoreGroupB.dll
+c:\Kuliah\2019\ASPCoreGroupB\bin\Debug\netcoreapp2.2\ASPCoreGroupB.pdb
+c:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.csprojAssemblyReference.cache
+c:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.csproj.CoreCompileInputs.cache
+c:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.RazorAssemblyInfo.cache
+c:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.RazorAssemblyInfo.cs
+c:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.AssemblyInfoInputs.cache
+c:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.AssemblyInfo.cs
+c:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.RazorTargetAssemblyInfo.cache
+c:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.dll
+c:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.pdb
