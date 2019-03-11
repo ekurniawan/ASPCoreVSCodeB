@@ -1,10 +1,11 @@
 
-//localhost/{Controller}/{Action Method}
-public class HomeController
+using Microsoft.AspNetCore.Mvc;
+
+public class HomeController : Controller
 {
     //action method
-    public string Index(){
-        return "Hello from ASP Controller";
+    public IActionResult Index(){
+        return View();
     }
 
     public string About(){

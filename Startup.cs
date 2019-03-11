@@ -30,10 +30,10 @@ namespace ASPCoreGroupB
             //untuk menambahkan mvc pattern
             app.UseMvcWithDefaultRoute();
 
-            app.Run(async (context) =>
+            /* app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World !");
-            });
+            });*/
         }
     }
 }
