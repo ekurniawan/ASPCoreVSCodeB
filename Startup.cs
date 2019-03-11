@@ -27,6 +27,8 @@ namespace ASPCoreGroupB
                 app.UseDeveloperExceptionPage();
             }
 
+            //menambahkan file static di wwwwroot
+            app.UseStaticFiles();
             //untuk menambahkan mvc pattern
             app.UseMvcWithDefaultRoute();
 
