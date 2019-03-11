@@ -1,8 +1,11 @@
 
-
-public class DokterController
+namespace ASPCoreGroupB.Controllers
 {
-    public string Index(){
-        return "Dari Halaman Dokter/Index";
+    public class DokterController
+    {
+        public string Index()
+        {
+            return "Dari Halaman Dokter/Index";
+        }
     }
 }
