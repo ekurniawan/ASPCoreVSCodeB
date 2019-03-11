@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Mvc;
 
 public class HomeController : Controller
@@ -8,8 +7,8 @@ public class HomeController : Controller
         return View();
     }
 
-    public string About(){
-        return "Ini adalah halaman About";
+    public IActionResult About(){
+        return View();
     }
 
     public string Contact(){

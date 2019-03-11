@@ -21,3 +21,4 @@ C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cs
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.RazorTargetAssemblyInfo.cs
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.Views.pdb
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\ASPCoreGroupB.csproj.CopyComplete
+C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Home\About.g.cshtml.cs
