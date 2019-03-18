@@ -1,11 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
 
 namespace ASPCoreGroupB.Controllers
 {
-    public class DokterController
+    public class DokterController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "Dari Halaman Dokter/Index";
+            return View();
         }
     }
 }
