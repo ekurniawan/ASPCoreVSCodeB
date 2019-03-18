@@ -1,0 +1,23 @@
+@{
+    Layout = "_Layout";
+}
+
+<h2>Daftar Dokter</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Telp</th>
+    </tr>
+    @foreach (var dokter in Model)
+    {
+        <tr>
+            <td>@dokter.FirstName</td>
+            <td>@dokter.LastName</td>
+            <td>@dokter.Address</td>
+            <td>@dokter.Telp</td>
+        </tr>
+    }   
+</table>
