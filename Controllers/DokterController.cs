@@ -1,3 +1,5 @@
+
+using ASPCoreGroupB.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASPCoreGroupB.Controllers
@@ -7,6 +9,13 @@ namespace ASPCoreGroupB.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Tampil(Dokter dokter)
+        {
+            //return Content($"{dokter.FirstName} {dokter.LastName}, {dokter.Address}, {dokter.Telp}");
+            Dokter model = dokter;
+            return View(model);
         }
     }
 }
