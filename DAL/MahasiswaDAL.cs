@@ -16,8 +16,28 @@ namespace ASPCoreGroupB.DAL {
         }
 
         public List<Mahasiswa> GetAll(){
-            using(SqlConnection conn = new SqlConnection()){
+            using(SqlConnection conn = new SqlConnection(GetConnStr())){
+                List<Mahasiswa> lstMahasiswa = new List<Mahasiswa>();
+                string strSql = @"select * from Mahasiswa order by Nama";
+                SqlCommand cmd = new SqlCommand(strSql,conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if(dr.HasRows){
+                    while(dr.Read()){
+                        var mhs = new Mahasiswa {
+                            Nim = dr["Nim"].ToString(),
+                            Nama = dr["Nama"].ToString(),
+                            Email = dr["Email"].ToString(),
+                            Telp = dr["Telp"].ToString()
+                        };
+                        lstMahasiswa.Add(mhs);
+                    }
+                }
+                dr.Close();
+                cmd.Dispose();
+                conn.Close();
 
+                return lstMahasiswa;
             }
         }
 
