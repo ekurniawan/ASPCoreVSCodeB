@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using ASPCoreGroupB.Models;
 using Microsoft.Extensions.Configuration;
+using Dapper;
 
 namespace ASPCoreGroupB.DAL { 
     public class MahasiswaDAL : IMahasiswa {
@@ -15,11 +16,14 @@ namespace ASPCoreGroupB.DAL {
             return _config.GetConnectionString("DefaultConnection");
         }
 
-        public List<Mahasiswa> GetAll(){
+        public IEnumerable<Mahasiswa> GetAll(){
             using(SqlConnection conn = new SqlConnection(GetConnStr())){
-                List<Mahasiswa> lstMahasiswa = new List<Mahasiswa>();
+                //List<Mahasiswa> lstMahasiswa = new List<Mahasiswa>();
                 string strSql = @"select * from Mahasiswa order by Nama";
-                SqlCommand cmd = new SqlCommand(strSql,conn);
+                return conn.Query<Mahasiswa>(strSql);
+                
+                
+                /* SqlCommand cmd = new SqlCommand(strSql,conn);
                 conn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 if(dr.HasRows){
@@ -37,7 +41,7 @@ namespace ASPCoreGroupB.DAL {
                 cmd.Dispose();
                 conn.Close();
 
-                return lstMahasiswa;
+                return lstMahasiswa;*/
             }
         }
 
