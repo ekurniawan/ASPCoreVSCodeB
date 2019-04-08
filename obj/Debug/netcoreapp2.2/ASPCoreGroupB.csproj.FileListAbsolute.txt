@@ -27,3 +27,4 @@ C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Dokter\Index.g.cshtml.cs
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Dokter\Tampil.g.cshtml.cs
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Dokter\DaftarDokter.g.cshtml.cs
+C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Mahasiswa\Index.g.cshtml.cs

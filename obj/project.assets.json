@@ -12078,11 +12078,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Kuliah\\2019\\ASPCoreGroupB\\ASPCoreGroupB.csproj",
+      "projectUniqueName": "C:\\Kuliah\\2019\\ASPCoreGroupB\\ASPCoreGroupB.csproj",
       "projectName": "ASPCoreGroupB",
-      "projectPath": "c:\\Kuliah\\2019\\ASPCoreGroupB\\ASPCoreGroupB.csproj",
+      "projectPath": "C:\\Kuliah\\2019\\ASPCoreGroupB\\ASPCoreGroupB.csproj",
       "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
-      "outputPath": "c:\\Kuliah\\2019\\ASPCoreGroupB\\obj\\",
+      "outputPath": "C:\\Kuliah\\2019\\ASPCoreGroupB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12096,9 +12096,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nuget.uxdivers.com/grial": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.telerik.com/nuget": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.2": {

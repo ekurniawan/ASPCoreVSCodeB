@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ASPCoreGroupB.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -17,6 +18,7 @@ namespace ASPCoreGroupB
         {
             //menambahkan mvc
             services.AddMvc();
+            services.AddScoped<IMahasiswa,MahasiswaDAL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
