@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using ASPCoreGroupB.Models;
 using Microsoft.Extensions.Configuration;
 using Dapper;
+using System;
 
 namespace ASPCoreGroupB.DAL { 
     public class MahasiswaDAL : IMahasiswa {
@@ -18,30 +19,8 @@ namespace ASPCoreGroupB.DAL {
 
         public IEnumerable<Mahasiswa> GetAll(){
             using(SqlConnection conn = new SqlConnection(GetConnStr())){
-                //List<Mahasiswa> lstMahasiswa = new List<Mahasiswa>();
                 string strSql = @"select * from Mahasiswa order by Nama";
                 return conn.Query<Mahasiswa>(strSql);
-                
-                
-                /* SqlCommand cmd = new SqlCommand(strSql,conn);
-                conn.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                if(dr.HasRows){
-                    while(dr.Read()){
-                        var mhs = new Mahasiswa {
-                            Nim = dr["Nim"].ToString(),
-                            Nama = dr["Nama"].ToString(),
-                            Email = dr["Email"].ToString(),
-                            Telp = dr["Telp"].ToString()
-                        };
-                        lstMahasiswa.Add(mhs);
-                    }
-                }
-                dr.Close();
-                cmd.Dispose();
-                conn.Close();
-
-                return lstMahasiswa;*/
             }
         }
 
@@ -59,7 +38,19 @@ namespace ASPCoreGroupB.DAL {
 
         public void Insert(Mahasiswa mhs)
         {
-            throw new System.NotImplementedException();
+            using(SqlConnection conn = new SqlConnection(GetConnStr())){
+                var strSql = @"insert into Mahasiswa(Nim,Nama,Email,Telp) 
+                values(@Nim,@Nama,@Email,@Telp)";
+
+                try{
+                    var param = new {Nim=mhs.Nim,Nama=mhs.Nama,Email=mhs.Email,
+                        Telp=mhs.Telp};
+                    conn.Execute(strSql,param);
+                }
+                catch(SqlException sqlEx){
+                    throw new Exception($"Error : {sqlEx.Message}");
+                }
+            }
         }
 
         public void Update(Mahasiswa mhs)

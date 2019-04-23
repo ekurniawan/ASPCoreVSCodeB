@@ -28,3 +28,4 @@ C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Dokter\Index.g.
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Dokter\Tampil.g.cshtml.cs
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Dokter\DaftarDokter.g.cshtml.cs
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Mahasiswa\Index.g.cshtml.cs
+C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Mahasiswa\Create.g.cshtml.cs
