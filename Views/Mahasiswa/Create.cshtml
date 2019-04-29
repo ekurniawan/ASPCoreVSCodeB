@@ -4,7 +4,14 @@
     Layout = "_Layout";
 }
 
-<h2>Form Tambah Mahasiswa</h2>
+<h2>Form Tambah Mahasiswa</h2><br/>
+<a asp-action="Index" class="btn btn-success btn-xs">Tampil Data</a>
+<div class="row">
+@if(ViewData["pesan"]!=null){
+    @Html.Raw(ViewData["pesan"])
+}
+<br/><br/>
+</div>
 
 <div class="col-md-6">
     <form asp-action="CreatePost">

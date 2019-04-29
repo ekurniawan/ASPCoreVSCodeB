@@ -24,10 +24,14 @@ namespace ASPCoreGroupB.Controllers{
         public IActionResult CreatePost(Mahasiswa mhs){
             try{
                 _mhs.Insert(mhs);
-                return Content("Data berhasil ditambah !");      
+                ViewData["pesan"] = 
+                    "<span class='alert alert-success'>Data Mahasiswa berhasil ditambah</span>";
+                return View("Create");      
             }
             catch(Exception ex){
-                return Content($"Error: {ex.Message}");
+                ViewData["pesan"] = 
+                $"<span class='alert alert-danger'>Data Gagal Ditambah, {ex.Message}</span>";
+                return View("Create");
             }
         }
     }

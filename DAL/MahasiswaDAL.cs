@@ -26,14 +26,23 @@ namespace ASPCoreGroupB.DAL {
 
         public void Delete(string nim)
         {
-            throw new System.NotImplementedException();
+            using(SqlConnection conn = new SqlConnection(GetConnStr())){
+                //var strSql = @"delete from Mahasiswa wh";
+            }
         }
-
-        
 
         public Mahasiswa GetById(string nim)
         {
-            throw new System.NotImplementedException();
+            using(SqlConnection conn = new SqlConnection(GetConnStr())){
+                var strSql = @"select * from Mahasiswa 
+                             where Nim=@Nim";
+                var param = new {Nim=nim};
+                var result = conn.QuerySingleOrDefault(strSql,param);
+                if(result!=null)
+                    throw new Exception("Error: data tidak ditemukan !");
+                
+                return result;
+            }
         }
 
         public void Insert(Mahasiswa mhs)
@@ -55,7 +64,7 @@ namespace ASPCoreGroupB.DAL {
 
         public void Update(Mahasiswa mhs)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
