@@ -24,6 +24,18 @@ namespace ASPCoreGroupB.Controllers
             return View();
         }
 
+        public IActionResult Delete(string id){
+            try{
+                _mhs.Delete(id);
+                var data = _mhs.GetAll();
+                ViewData["pesan"] =
+                    "<span class='alert alert-success'>Data Mahasiswa berhasil didelete</span>";
+                return View("Index",data);
+            }catch(Exception ex){
+                return Content($"Error: {ex.Message}");
+            }
+        }
+
         public IActionResult Details(string id)
         {
             try

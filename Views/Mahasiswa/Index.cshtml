@@ -1,3 +1,5 @@
+@model IEnumerable<ASPCoreGroupB.Models.Mahasiswa>
+
 @{
     Layout = "_Layout";
 }
@@ -5,7 +7,12 @@
 
 <h2>Daftar Mahasiswa</h2><br/>
 <a asp-action="Create" class="btn btn-success btn-xs">Tambah Data</a>
-<br /><br/>
+<div class="row">
+@if(ViewData["pesan"]!=null){
+    @Html.Raw(ViewData["pesan"])
+}
+<br/><br/>
+</div>
 
 <div class="row">
 <table class="table table-striped">
@@ -14,6 +21,7 @@
         <th>Nama</th>
         <th>Email</th>
         <th>Telp</th>
+        <th></th>
         <th></th>
     </tr>
     @foreach(var data in Model){
@@ -24,6 +32,7 @@
             <td>@data.Telp</td>
             <td><a asp-action="Details" asp-route-id="@data.Nim">
                 details</a></td>
+            <td><a asp-action="Delete" asp-route-id="@data.Nim">delete</a></td>
         </tr>
     }
 </table>
