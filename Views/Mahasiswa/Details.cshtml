@@ -1,0 +1,32 @@
+@model ASPCoreGroupB.Models.Mahasiswa
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Detail Mahasiswa</h2><br/>
+<a asp-action="Index" class="btn btn-success btn-xs">Tampil Data</a>
+
+<div class="col-md-6">
+    <form asp-action="CreatePost">
+        <div class="form-group">
+            <label asp-for="Nim">Nim :</label>
+            <input asp-for="Nim" class="form-control" />
+        </div>
+       <div class="form-group">
+            <label asp-for="Nama">Nama :</label>
+            <input asp-for="Nama"  class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email">Email :</label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Telp">Telp :</label>
+            <input asp-for="Telp" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

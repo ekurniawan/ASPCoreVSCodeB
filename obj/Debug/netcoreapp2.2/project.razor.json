@@ -2794,6 +2794,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Mahasiswa\\Details.cshtml",
+      "TargetPath": "Views\\Mahasiswa\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Mahasiswa\\Create.cshtml",
       "TargetPath": "Views\\Mahasiswa\\Create.cshtml",
       "FileKind": "mvc"

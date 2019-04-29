@@ -34,11 +34,10 @@ namespace ASPCoreGroupB.DAL {
         public Mahasiswa GetById(string nim)
         {
             using(SqlConnection conn = new SqlConnection(GetConnStr())){
-                var strSql = @"select * from Mahasiswa 
-                             where Nim=@Nim";
+                var strSql = @"select * from Mahasiswa where Nim=@Nim";
                 var param = new {Nim=nim};
-                var result = conn.QuerySingleOrDefault(strSql,param);
-                if(result!=null)
+                var result = conn.QuerySingleOrDefault<Mahasiswa>(strSql,param);
+                if(result==null)
                     throw new Exception("Error: data tidak ditemukan !");
                 
                 return result;
