@@ -27,7 +27,13 @@ namespace ASPCoreGroupB.DAL {
         public void Delete(string nim)
         {
             using(SqlConnection conn = new SqlConnection(GetConnStr())){
-                //var strSql = @"delete from Mahasiswa wh";
+                var strSql = @"delete from Mahasiswa where Nim=@Nim";
+                try{
+                    var param = new {nim=nim};
+                    conn.Execute(strSql,param);
+                }catch(SqlException sqlEx){
+                    throw new Exception($"Error: {sqlEx.Message}");
+                }               
             }
         }
 

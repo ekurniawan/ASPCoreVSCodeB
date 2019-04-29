@@ -39,6 +39,19 @@ namespace ASPCoreGroupB.Controllers
         }
 
         [HttpPost]
+        public IActionResult Edit(Mahasiswa mhs){
+            try{
+                _mhs.Update(mhs);
+                ViewData["pesan"] =
+                    "<span class='alert alert-success'>Data Mahasiswa berhasil diedit</span>";
+                return View("Details");
+            }catch(Exception ex){
+                return Content($"Error: {ex.Message}");
+            }
+        }
+
+
+        [HttpPost]
         public IActionResult CreatePost(Mahasiswa mhs)
         {
             try
