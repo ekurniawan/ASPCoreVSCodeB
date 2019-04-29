@@ -63,7 +63,17 @@ namespace ASPCoreGroupB.DAL {
 
         public void Update(Mahasiswa mhs)
         {
-            
+            using(SqlConnection conn = new SqlConnection(GetConnStr())){
+                var strSql = @"update Mahasiswa set Nama=@Nama,
+                    Email=@Email,Telp=@Telp where Nim=@Nim";
+                try{
+                    var param = new {Nama=mhs.Nama,Email=mhs.Email,
+                    Telp=mhs.Telp,Nim=mhs.Nim};
+                    conn.Execute(strSql,param);
+                }catch(SqlException sqlEx){
+                    throw new Exception(sqlEx.Message);
+                }
+            }
         }
     }
 }
