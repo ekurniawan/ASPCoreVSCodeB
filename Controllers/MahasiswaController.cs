@@ -19,6 +19,12 @@ namespace ASPCoreGroupB.Controllers
             return View(data);
         }
 
+        [HttpPost]
+        public IActionResult Search(string keyword){
+            var data = _mhs.GetAllByNim(keyword);
+            return View("Index",data);
+        }
+
         public IActionResult Create()
         {
             return View();

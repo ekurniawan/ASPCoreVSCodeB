@@ -9,6 +9,7 @@ namespace ASPCoreGroupB.DAL {
         void Insert(Mahasiswa mhs);
         void Update(Mahasiswa mhs);
         void Delete(string nim);
+        IEnumerable<Mahasiswa> GetAllByNim(string nim);
     }
 
 }

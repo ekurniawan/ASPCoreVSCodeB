@@ -24,6 +24,15 @@ namespace ASPCoreGroupB.DAL {
             }
         }
 
+        public IEnumerable<Mahasiswa> GetAllByNim(string nim){
+            using(SqlConnection conn = new SqlConnection(GetConnStr())){
+                string strSql = @"select * from Mahasiswa where Nim=@Nim 
+                                  order by Nama";
+                var param = new {nim=nim};
+                return conn.Query<Mahasiswa>(strSql,param);
+            }
+        }
+
         public void Delete(string nim)
         {
             using(SqlConnection conn = new SqlConnection(GetConnStr())){
