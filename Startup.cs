@@ -19,6 +19,7 @@ namespace ASPCoreGroupB
             //menambahkan mvc
             services.AddMvc();
             services.AddScoped<IMahasiswa,MahasiswaDAL>();
+            services.AddScoped<IPengguna,PenggunaDAL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
