@@ -32,6 +32,15 @@ namespace ASPCoreGroupB.DAL {
                 return conn.Query<Mahasiswa>(strSql,param);
             }
         }
+        
+        public IEnumerable<Mahasiswa> GetAllByNama(string nama){
+            using(SqlConnection conn = new SqlConnection(GetConnStr())){
+                string strSql = @"select * from Mahasiswa 
+                where Nama like @Nama";
+                var param = new {Nama="%"+nama+"%"};
+                return conn.Query<Mahasiswa>(strSql,param);
+            }
+        }
 
         public void Delete(string nim)
         {

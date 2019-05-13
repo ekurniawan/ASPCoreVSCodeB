@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using ASPCoreGroupB.DAL;
 using ASPCoreGroupB.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -20,8 +21,17 @@ namespace ASPCoreGroupB.Controllers
         }
 
         [HttpPost]
-        public IActionResult Search(string keyword){
-            var data = _mhs.GetAllByNim(keyword);
+        public IActionResult Search(string keyword,string pilih){
+            IEnumerable<Mahasiswa> data;
+            if(pilih=="Nim"){
+                data = _mhs.GetAllByNim(keyword);
+            }
+            else if(pilih=="Nama") {
+                data = _mhs.GetAllByNama(keyword);
+            }
+            else {
+                data = _mhs.GetAll();
+            }
             return View("Index",data);
         }
 
