@@ -5,14 +5,12 @@
 }
 
 <h2>Form Registrasi</h2><br/>
-<a asp-action="Index" class="btn btn-success btn-xs">Tampil Data</a>
 <div class="row">
 @if(ViewData["pesan"]!=null){
     @Html.Raw(ViewData["pesan"])
 }
-<br/><br/>
+<br/>
 </div>
-
 <div class="col-md-6">
     <form asp-action="CreatePost">
         <div asp-validation-summary="ModelOnly" class="text-danger" />
