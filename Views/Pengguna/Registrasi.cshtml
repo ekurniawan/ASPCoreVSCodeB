@@ -1,0 +1,58 @@
+@model ASPCoreGroupB.Models.Pengguna
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Form Registrasi</h2><br/>
+<a asp-action="Index" class="btn btn-success btn-xs">Tampil Data</a>
+<div class="row">
+@if(ViewData["pesan"]!=null){
+    @Html.Raw(ViewData["pesan"])
+}
+<br/><br/>
+</div>
+
+<div class="col-md-6">
+    <form asp-action="CreatePost">
+        <div asp-validation-summary="ModelOnly" class="text-danger" />
+        <div class="form-group">
+            <label asp-for="Username">Username :</label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger" />
+        </div>
+       <div class="form-group">
+            <label asp-for="Password">Password :</label>
+            <input type="password" asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Repassword">Repassword :</label>
+            <input type="password" asp-for="Repassword" class="form-control" />
+            <span asp-validation-for="Repassword" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Aturan">Aturan :</label>
+            <input asp-for="Aturan" class="form-control" />
+            <span asp-validation-for="Aturan" class="text-danger" />
+        </div>
+         <div class="form-group">
+            <label asp-for="Nama">Nama Lengkap :</label>
+            <input asp-for="Nama" class="form-control" />
+            <span asp-validation-for="Nama" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Telp">Telp :</label>
+            <input asp-for="Telp" class="form-control" />
+            <span asp-validation-for="Telp" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
