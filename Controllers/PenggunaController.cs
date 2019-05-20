@@ -23,10 +23,11 @@ namespace ASPCoreGroupB.Controllers
                 var pgn = _pengguna.CekLogin(username,password);
                 HttpContext.Session.SetString("username",pgn.Username);
                 HttpContext.Session.SetString("aturan",pgn.Aturan);
-                ViewData["pesan"] = $"Selamat Datang {pgn.Username}";
-                return View("Home/Index");
+                ViewData["pesan"] = $"Selamat Datang {pgn.Username} anda berhasil login";
+                return View("Views/Home/Index.cshtml");
             }catch(Exception ex){
-                return Content(ex.Message);
+                ViewData["pesan"] = $"<span class='alert alert-danger'>{ex.Message}</span>";
+                return View();
             }
         }
 

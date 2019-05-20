@@ -31,3 +31,4 @@ C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Mahasiswa\Index
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Mahasiswa\Create.g.cshtml.cs
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Mahasiswa\Details.g.cshtml.cs
 C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Pengguna\Registrasi.g.cshtml.cs
+C:\Kuliah\2019\ASPCoreGroupB\obj\Debug\netcoreapp2.2\Razor\Views\Pengguna\Login.g.cshtml.cs

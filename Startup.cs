@@ -18,6 +18,9 @@ namespace ASPCoreGroupB
         {
             //menambahkan mvc
             services.AddMvc();
+            services.AddSession(options=>{
+                options.IdleTimeout = TimeSpan.FromMinutes(2);
+            });
             services.AddScoped<IMahasiswa,MahasiswaDAL>();
             services.AddScoped<IPengguna,PenggunaDAL>();
         }
@@ -32,6 +35,8 @@ namespace ASPCoreGroupB
 
             //menambahkan file static di wwwwroot
             app.UseStaticFiles();
+            //menambahkan session
+            app.UseSession();
             //untuk menambahkan mvc pattern
             app.UseMvcWithDefaultRoute();
 

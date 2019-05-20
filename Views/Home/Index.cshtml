@@ -2,5 +2,15 @@
     Layout = "_Layout";
 }
 
+
 <h1>Halaman Home Page</h1>
-<p>Selamat Datang di Halaman Home Page</p>
+
+<div class="row">
+@if(ViewData["pesan"]!=null){
+    @Html.Raw(ViewData["pesan"])
+}else {
+    <p>Selamat Datang di Halaman Home Page</p>
+}
+<br/>
+</div>
+

@@ -2764,6 +2764,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Pengguna\\Login.cshtml",
+      "TargetPath": "Views\\Pengguna\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Dokter\\Index.cshtml",
       "TargetPath": "Views\\Dokter\\Index.cshtml",
       "FileKind": "mvc"
