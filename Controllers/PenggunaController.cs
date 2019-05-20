@@ -20,6 +20,8 @@ namespace ASPCoreGroupB.Controllers
         public IActionResult Registrasi(Pengguna pengguna){
             try{
                 _pengguna.Insert(pengguna);
+                 ViewData["pesan"] =
+                    "<span class='alert alert-success'>Registrasi Pengguna Berhasil, Silahkan Login untuk masuk</span>";
                 return View();
             }
             catch(Exception ex){
