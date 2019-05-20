@@ -24,7 +24,20 @@ namespace ASPCoreGroupB.DAL
 
         public Pengguna CekLogin(string username, string password)
         {
-            throw new System.NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(GetConnStr())){
+                string strSql = @"select * from Pengguna where 
+                Username=@Username and Password=@Password";
+
+                var param = new {Username=username,
+                    Password=GetMd5(password)};
+                
+                var pgn = conn.QuerySingleOrDefault<Pengguna>(strSql,param);
+                if(pgn!=null){
+                    return pgn;
+                }else {
+                    throw new Exception("Username atau Password tidak sesuai");
+                }
+            }
         }
 
         public void Insert(Pengguna pengguna)
