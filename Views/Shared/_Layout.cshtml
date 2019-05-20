@@ -1,3 +1,12 @@
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+  var username = HttpContextAccessor.HttpContext.Session.GetString("username");
+}
+   
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,6 +64,20 @@
           <i class="fas fa-fw fa-user"></i>
           <span>Registrasi</span></a>
       </li>
+
+      @if(username==null){
+        <li class="nav-item">
+          <a class="nav-link" asp-controller="Pengguna" asp-action="Login">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Login</span></a>
+        </li>
+      }else {
+        <li class="nav-item">
+        <a class="nav-link" asp-controller="Pengguna" asp-action="Logout">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Logout</span></a>
+        </li>
+      }
       
 
     </ul>

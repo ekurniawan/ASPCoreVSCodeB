@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace ASPCoreGroupB
 {
@@ -21,6 +22,7 @@ namespace ASPCoreGroupB
             services.AddSession(options=>{
                 options.IdleTimeout = TimeSpan.FromMinutes(2);
             });
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IMahasiswa,MahasiswaDAL>();
             services.AddScoped<IPengguna,PenggunaDAL>();
         }

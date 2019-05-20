@@ -14,6 +14,8 @@ namespace ASPCoreGroupB.Controllers
         }
 
         public IActionResult Login(){
+            if(TempData["pesan"]!=null)
+                ViewData["pesan"] = TempData["pesan"].ToString();
             return View();
         }
 
@@ -29,6 +31,11 @@ namespace ASPCoreGroupB.Controllers
                 ViewData["pesan"] = $"<span class='alert alert-danger'>{ex.Message}</span>";
                 return View();
             }
+        }
+
+        public IActionResult Logout(){
+            HttpContext.Session.Clear();
+            return View("Login");
         }
 
         public IActionResult Registrasi(){
