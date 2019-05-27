@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ASPCoreGroupB.DAL;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.FileProviders;
 
 namespace ASPCoreGroupB
 {
@@ -22,6 +24,10 @@ namespace ASPCoreGroupB
             services.AddSession(options=>{
                 options.IdleTimeout = TimeSpan.FromMinutes(2);
             });
+            services.AddSingleton<IFileProvider>(  
+            new PhysicalFileProvider(  
+                Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
+                
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IMahasiswa,MahasiswaDAL>();
             services.AddScoped<IPengguna,PenggunaDAL>();

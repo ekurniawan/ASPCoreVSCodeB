@@ -1,0 +1,14 @@
+@model ASPCoreGroupB.Models.Pengguna
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <form asp-controller="Upload" asp-action="UploadFile" method="post"  
+      enctype="multipart/form-data">  
+      
+    <input type="file" name="file" />  
+    <button type="submit">Upload File</button>  
+</form> 
+</div>

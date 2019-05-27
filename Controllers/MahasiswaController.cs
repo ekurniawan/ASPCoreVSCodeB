@@ -15,19 +15,38 @@ namespace ASPCoreGroupB.Controllers
             _mhs = mhs;
         }
 
-        private bool IsLogin(){
-            if(HttpContext.Session.GetString("username")==null){
+        private bool IsLogin()
+        {
+            if (HttpContext.Session.GetString("username") == null)
+            {
                 return false;
-            }else {
+            }
+            else
+            {
                 return true;
+            }
+        }
+
+        private bool CekAturan(string aturan)
+        {
+            if (HttpContext.Session.GetString("aturan") != null &&
+            HttpContext.Session.GetString("aturan") == aturan)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
         public IActionResult Index()
         {
-            if(!IsLogin()){
+            //jika belum login
+            if (!IsLogin())
+            {
                 TempData["pesan"] = "<span class='alert alert-danger'>Silahkan Login terlebih dahulu untuk mengakses halaman mahasiswa.</span>";
-                return RedirectToAction("Login","Pengguna");
+                return RedirectToAction("Login", "Pengguna");
             }
 
             var data = _mhs.GetAll();
@@ -35,33 +54,57 @@ namespace ASPCoreGroupB.Controllers
         }
 
         [HttpPost]
-        public IActionResult Search(string keyword,string pilih){
+        public IActionResult Search(string keyword, string pilih)
+        {
             IEnumerable<Mahasiswa> data;
-            if(pilih=="Nim"){
+            if (pilih == "Nim")
+            {
                 data = _mhs.GetAllByNim(keyword);
             }
-            else if(pilih=="Nama") {
+            else if (pilih == "Nama")
+            {
                 data = _mhs.GetAllByNama(keyword);
             }
-            else {
+            else
+            {
                 data = _mhs.GetAll();
             }
-            return View("Index",data);
+            return View("Index", data);
         }
 
         public IActionResult Create()
         {
+            if (!IsLogin())
+            {
+
+                TempData["pesan"] = "<span class='alert alert-danger'>Silahkan Login terlebih dahulu untuk mengakses halaman mahasiswa.</span>";
+                return RedirectToAction("Login", "Pengguna");
+            }
+            else
+            {
+                if (!CekAturan("admin"))
+                {
+                    TempData["pesan"] = "<span class='alert alert-danger'>Silahkan login sebagai admin untuk create mahasiswa</span>";
+                    return RedirectToAction("Login", "Pengguna");
+                }
+
+            }
+
             return View();
         }
 
-        public IActionResult Delete(string id){
-            try{
+        public IActionResult Delete(string id)
+        {
+            try
+            {
                 _mhs.Delete(id);
                 var data = _mhs.GetAll();
                 ViewData["pesan"] =
                     "<span class='alert alert-success'>Data Mahasiswa berhasil didelete</span>";
-                return View("Index",data);
-            }catch(Exception ex){
+                return View("Index", data);
+            }
+            catch (Exception ex)
+            {
                 return Content($"Error: {ex.Message}");
             }
         }
@@ -81,13 +124,17 @@ namespace ASPCoreGroupB.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Mahasiswa mhs){
-            try{
+        public IActionResult Edit(Mahasiswa mhs)
+        {
+            try
+            {
                 _mhs.Update(mhs);
                 ViewData["pesan"] =
                     "<span class='alert alert-success'>Data Mahasiswa berhasil diedit</span>";
                 return View("Details");
-            }catch(Exception ex){
+            }
+            catch (Exception ex)
+            {
                 return Content($"Error: {ex.Message}");
             }
         }
